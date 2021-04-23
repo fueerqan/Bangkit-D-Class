@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Bangkit D Class</string>
+    <string name="go_to_view_model_label">Go To View Model</string>
+    <string name="hint_panjang">Masukkan Panjang</string>
+    <string name="hint_lebar">Masukkan Lebar</string>
+    <string name="hint_tinggi">Masukkan Tinggi</string>
+    <string name="calculate_volume_label">Hitung Volume</string>
 </resources>

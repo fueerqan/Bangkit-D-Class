@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatEditText
 import androidx.appcompat.widget.AppCompatTextView
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.muhammadfurqan.bangkitdclass.R
 
@@ -37,14 +36,14 @@ class ViewModelActivity : AppCompatActivity() {
             onCalculate()
         }
 
-        observeLiveData()
+//        observeLiveData()
     }
 
-    private fun observeLiveData() {
-        viewModel.result.observe(this, Observer {
-            tvResult.text = it.toString()
-        })
-    }
+//    private fun observeLiveData() {
+//        viewModel.result.observe(this, Observer {
+//            tvResult.text = it.toString()
+//        })
+//    }
 
     private fun onCalculate() {
         try {
@@ -53,6 +52,9 @@ class ViewModelActivity : AppCompatActivity() {
             val tinggi = etTinggi.text.toString().toFloat()
 
             viewModel.calculateVolume(panjang, lebar, tinggi)
+
+            tvResult.text = viewModel.result.toString()
+
         } catch (t: Throwable) {
             Toast.makeText(this, "Please input the correct number", Toast.LENGTH_SHORT).show()
         }
